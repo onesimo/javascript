@@ -56,5 +56,68 @@
 
 	document.write(change(15.34,20));	
 </script>
+
+<h1>Switch</h1>
+<script type="text/javascript">
+	 color = 'black';
+	 switch(color){
+	 	case "blue":
+	 		document.write('blue');
+	 		break;
+	 	case "red":
+	 		document.write('red');
+	 		break;
+	 	case "green":
+	 		document.write('green');
+	 		break;
+	 	case "black":
+	 		//document.write('black');
+	 		break;
+	 	default:
+	 		document.write('no color');
+
+	 }
+</script>
+
+<input type="text" id="weight" placeholder="weight">
+<br>
+<select id="fruits">
+	<option value="apple">Apple</option>
+	<option value="watermelon">watermelon</option>
+	<option value="lemon">lemon</option>
+</select>
+<br>
+<button onclick="balance()">to weight</button>
+<br>
+<span id="result"></span>
+<script type="text/javascript">
+	function balance(){
+		var fruits = document.getElementById("fruits").value;
+		var weight = document.getElementById("weight").value;
+
+		if(!weight){
+			document.getElementById("result").innerHTML = "Please fill weight";
+			return;
+		}else{
+			document.getElementById("result").innerHTML = "";
+		}
+
+		switch (fruits){
+			case "apple":
+				document.getElementById("result").innerHTML = "$ "+weight* 0.35;
+				break;
+			case "watermelon":
+				document.getElementById("result").innerHTML = "$ "+weight* 0.55;
+				break;
+			case "lemon":
+				document.getElementById("result").innerHTML = "$ "+weight* 0.21;
+				break;
+			default:
+				document.getElementById("result").innerHTML = "Product not registered";
+
+		}
+
+	}
+</script>
 </body>
 </html>
