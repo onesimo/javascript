@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Search</title>
+</head>
+<body>
+<h1>IndexOf</h1>
+<script type="text/javascript">
+
+	//function indexOf()
+	var arr1 = ['orange',"blue",'red','blue','green'];
+	var ret = arr1.indexOf("blue"); //1
+	console.log(ret);
+
+
+	//function indexOf(searchElement, fromIndex)
+	var ret = arr1.indexOf("blue",2); //3
+	console.log(ret);
+
+
+	//function lastIndexOf() 
+	var ret = arr1.lastIndexOf("blue"); //3
+	console.log(ret);
+
+	//function lastIndexOf() - 
+	var ret = arr1.lastIndexOf("blue",2); //1
+	console.log(ret);
+
+</script>
+
+<input type="text" id="search" name="">
+<button onclick="search()">Search</button>
+<br>
+<strong>Result:</strong>
+<br>
+<span id="result"></span>
+<script type="text/javascript">
+
+
+	function search(){
+
+		var arr = ['a content af a blog',
+					"new articles",
+					'new title',
+					'languages web',
+					'action buttons'
+				];
+
+		var testKey = null;
+		var result = "";
+		var search = document.getElementById("search").value;
+
+		for(var key in arr) {
+			var auxArr = arr[key].split(" ");
+			for (var key2 in auxArr){
+				if(auxArr.indexOf(search) > -1){
+					if(testKey != key){
+						testKey = key;
+						result += "<p>" + arr[key] + "</p>";
+					}
+				}
+			}
+		}
+		//alert(result);
+
+		document.getElementById("result").innerHTML = result;
+	}
+
+</script>
+</body>
+</html>
