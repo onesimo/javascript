@@ -18,7 +18,43 @@
 		document.write("<p>key = " +key+ " value = "+value+ "</p>");
 	});
 
-	
+	//if and else
+
+	if(1 > 0){
+		document.write('true');
+
+	}else{
+		document.write('false');
+	}
+</script>
+
+<h1>Calculator</h1>
+<script type="text/javascript">
+	function calculator(a,b,op){
+		if(op === '+'){
+			return a + b;
+		}else if(op === '-'){
+			return a - b;
+		}else if(op === '*'){
+			return a * b;
+		}else{
+			return a / b;
+		}
+	}
+
+	document.write(calculator(4,3,"-"));	
+</script>
+
+<h1>Calculator the change</h1>
+<script type="text/javascript">
+	function change(value,cash){
+		if(value > cash){
+			return "Error -> value > cash:";
+		}
+		return "change = $ "+(cash - value);
+	}
+
+	document.write(change(15.34,20));	
 </script>
 </body>
 </html>
