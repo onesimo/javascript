@@ -22,7 +22,7 @@ Cat.prototype = Object.create(Animal.prototype);
 Dog.prototype = Object.create(Animal.prototype);
 
 console.log(new Cat().say());
-console.log(new Cat();
+console.log(new Cat());
 
 
 
