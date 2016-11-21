@@ -4,8 +4,20 @@ function Person(){
 	this.eyesColor = '';
 	this.body = '';
 
-	this.move = function() {
-		console.log('hello from move');
+	//private attribute
+	var tatoo = '';
+
+	//private method
+	var swin = function (){
+		return console.log("I'm swing")
+	}
+
+	this.move = function(canSwin) {
+		if(canSwin){
+			return swin();
+		}
+
+		return console.log("I'm walking");
 	};
 
 	this.say = function() {
@@ -26,6 +38,7 @@ onesimo.age = 26;
 onesimo.name = 'Onesimo';
 onesimo.eyesColor = 'Brown'
 onesimo.body = 'thin';
+onesimo.move(true);
 
 console.log(onesimo);
 
@@ -35,5 +48,6 @@ jhon.age = 22;
 jhon.name = 'Jhon';
 jhon.eyesColor = 'green'
 jhon.body = 'fat';
+jhon.move();
 
 console.log(jhon);
