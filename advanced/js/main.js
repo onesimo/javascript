@@ -145,5 +145,12 @@ function validate(){
 		document.getElementById('errors').style.display = "none";
 		return 1;
 	}
+}
 
+
+function deleteList(){
+	if(confirm("Delete this list?")){
+		list = [];
+		setList(list);
+	}
 }

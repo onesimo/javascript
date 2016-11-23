@@ -29,9 +29,14 @@
 					
 				</span>
 				<button onclick="updateData();" class="btn btn-default">Save</button>
-				<button onclick="resetData();" class="btn btn-default">Cancel</button>
+				<button onclick="resetData();" class="btn btn-default">Cancel</button> 
 			</span>
+
 			<button id="btnAdd" onclick="addData();" class="btn btn-default">Add</button>
+			<span id="btnAdd">
+				<button onclick="resetData();" class="btn btn-default">Reset</button>
+			</span>
+			<button onclick="deleteList();" class="btn btn-default">Delete List</button>
 		</div>
 		<div id="errors" style="display: none;">
 			
@@ -45,7 +50,7 @@
             <h4 class="text-center text-success">Total: <span id="totalValue">$ 0,00</span></h4>
         </div>
     </nav>
-    
+
 <script type="text/javascript" src="js/config.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
 </body>
