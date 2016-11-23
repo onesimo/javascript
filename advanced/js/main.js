@@ -26,6 +26,7 @@ function setList(list){
 	table += '</tbody>';
 	document.getElementById("listTable").innerHTML = table;
 	getTotal(list);
+	saveListStorage(list)
 }
  
 function formatDesc(desc){
@@ -92,8 +93,7 @@ function updateData(){
 	resetData();
 	setList(list);
 }
-setList(list);
-
+ 
 function deleteData(id){
 	if(confirm("Delete this item?")){
 		if(id === list.length-1){
@@ -154,3 +154,18 @@ function deleteList(){
 		setList(list);
 	}
 }
+
+function saveListStorage(list){
+	var jsonStr = JSON.stringify(list);
+	localStorage.setItem("list",jsonStr);
+}
+
+function iniListStorage(){
+	var testList = localStorage.getItem("list");
+	if(testList){
+		list = JSON.parse(testList);
+	}
+	setList(list);
+}
+
+iniListStorage();
